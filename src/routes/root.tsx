@@ -9,7 +9,7 @@ export const RootPage = () => {
           <div className={'flex flex-col items-center gap-16'}>
             <Link to={'/'}><h1 className={'tracking-widest uppercase'}>BLACKBUCKS COFFEE</h1></Link>
             <div className={'absolute right-6 flex items-center gap-2'}>
-              <ShoppingCartIcon className={'size-4 -mt-1'} />
+              <ShoppingCartIcon className={'size-4 shrink-0 -mt-1'} />
               <span>1</span>
             </div>
           </div>

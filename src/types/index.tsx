@@ -4,4 +4,5 @@ export type ProductProps = {
   name: string
   info: string
   price: string
+  filter: string[]
 }

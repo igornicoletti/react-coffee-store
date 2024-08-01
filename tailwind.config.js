@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import plugin from 'tailwindcss/plugin'
+
 export default {
   content: [
     "./index.html",
@@ -16,5 +19,23 @@ export default {
       lander: 'LanderGrande',
     }
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities }) =>
+      addUtilities({
+        '.scrollbar': {
+          '&::-webkit-scrollbar': {
+            width: '0.75rem',
+            backgroundColor: 'transparent'
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: 'transparent'
+          },
+          '&::-webkit-scrollbar-thumb': {
+            borderRadius: '2rem',
+            backgroundColor: '#F4F4EE'
+          }
+        }
+      })
+    )
+  ]
 }

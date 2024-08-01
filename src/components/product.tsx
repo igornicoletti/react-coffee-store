@@ -1,32 +1,33 @@
 import { MinusIcon, PlusIcon } from 'lucide-react'
 
 import { ProductProps } from '../types'
+import { ProductVariants } from '../styles'
 
-export const ProductComponents = ({ image, name, info, price }: ProductProps) => {
+const { productactions, productadd, productamount, productbackdrop, productcard, productcontrols, productdescript, producticon, productimage, productinfo, productinput, productname, productprice } = ProductVariants()
+
+export const ProductComponent = ({ image, name, info, price }: ProductProps) => {
   return (
-    <div className={'w-full max-w-72 mx-auto flex flex-col gap-6'}>
-      <div className={'relative'}>
-        <img src={'/images/backdrop.svg'} alt={name} />
-        <img className={'absolute bottom-0'} src={image} alt={name} />
+    <div className={productcard()}>
+      <div className={productbackdrop()}>
+        <img src={'/images/backdropproduct.png'} alt={''} />
+        <img className={productimage()} src={image} alt={name} />
       </div>
-      <div className={'flex flex-col items-center text-center gap-2'}>
-        <p className={'tracking-widest uppercase text-lg'}>{name}</p>
-        <p className={'text-sm'}>{info}</p>
-        <p className={'tracking-widest'}>R$ {price}</p>
+      <div className={productdescript()}>
+        <p className={productname()}>{name}</p>
+        <p className={productinfo()}>{info}</p>
+        <p className={productprice()}>R$ {price}</p>
       </div>
-      <div className={'flex items-center justify-center gap-6 mt-auto'}>
-        <div className={'flex items-center justify-center'}>
-          <button className={'w-8 h-8 flex items-center justify-center rounded-full border border-in-dark hover:bg-in-dark hover:text-in-white focus:outline-none transition ease-in-out duration-200'}>
-            <MinusIcon className={'size-4 shrink-0'} />
+      <div className={productactions()}>
+        <div className={productcontrols()}>
+          <button className={productamount()}>
+            <MinusIcon className={producticon()} />
           </button>
-          <input className={'w-10 text-lg text-center bg-transparent focus:outline-none'} defaultValue={'1'} min={1} max={99} type={'number'} />
-          <button className={'w-8 h-8 flex items-center justify-center rounded-full border border-in-dark hover:bg-in-dark hover:text-in-white focus:outline-none transition ease-in-out duration-200'}>
-            <PlusIcon className={'size-4 shrink-0'} />
+          <input className={productinput()} defaultValue={'1'} min={1} max={99} type={'number'} />
+          <button className={productamount()}>
+            <PlusIcon className={producticon()} />
           </button>
         </div>
-        <button className={'h-10 px-5 flex items-center justify-center rounded-full border border-in-dark bg-in-dark text-in-white focus:outline-none'}>
-          <span className={'tracking-widest uppercase text-xs'}>Adicionar</span>
-        </button>
+        <button className={productadd()}>Adicionar</button>
       </div>
     </div>
   )

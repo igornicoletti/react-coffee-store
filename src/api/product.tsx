@@ -2,7 +2,7 @@ const products = [
   {
     id: '1',
     image: '/images/cappuccino.png',
-    name: 'Cappuccino',
+    name: 'Cappuccino Classic',
     info: 'O espresso e a espuma de leite unem-se para criar o cappuccino clássico.',
     price: '20,90',
     filter: ['traditional']

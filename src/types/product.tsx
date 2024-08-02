@@ -3,6 +3,6 @@ export type ProductProps = {
   image: string
   name: string
   info: string
-  price: string
+  price: number
   filter: string[]
 }

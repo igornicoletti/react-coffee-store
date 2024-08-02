@@ -7,7 +7,7 @@ export const RootVariants = tv({
     rootcontainer: 'relative w-full max-w-screen-xl mx-auto px-6',
     rootheader: 'relative flex flex-col items-center text-center gap-16 py-8',
     roottitle: 'tracking-widest uppercase',
-    rootcart: 'absolute right-0 flex items-start gap-2',
-    rooticon: 'size-5 shrink-0',
+    rootcart: 'absolute right-0 flex items-center gap-2',
+    rooticon: 'size-4 shrink-0 -mt-1',
   }
 })

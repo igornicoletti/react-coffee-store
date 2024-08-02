@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-
-import plugin from 'tailwindcss/plugin'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
   content: [
@@ -12,30 +11,14 @@ export default {
       colors: {
         'in-dark': '#282A36',
         'in-white': '#F8F8F2',
+        'in-thumb': '#F8F8F210',
+        'in-track': '#64748b29',
       }
     },
     fontFamily: {
-      sans: ['"SoDoSans", sans-serif'],
+      sans: ['SoDoSans', ...defaultTheme.fontFamily.sans],
       lander: 'LanderGrande',
     }
   },
-  plugins: [
-    plugin(({ addUtilities }) =>
-      addUtilities({
-        '.scrollbar': {
-          '&::-webkit-scrollbar': {
-            width: '0.75rem',
-            backgroundColor: 'transparent'
-          },
-          '&::-webkit-scrollbar-track': {
-            backgroundColor: 'transparent'
-          },
-          '&::-webkit-scrollbar-thumb': {
-            borderRadius: '2rem',
-            backgroundColor: '#F4F4EE'
-          }
-        }
-      })
-    )
-  ]
+  plugins: []
 }

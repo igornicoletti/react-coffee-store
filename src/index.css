@@ -10,6 +10,7 @@
     font-display: swap;
     src: url(/fonts/SoDoSans-Regular.woff2) format('woff2');
   }
+
   @font-face {
     font-family: 'LanderGrande';
     font-style: normal;

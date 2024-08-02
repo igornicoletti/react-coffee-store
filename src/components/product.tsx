@@ -3,20 +3,20 @@ import { MinusIcon, PlusIcon } from 'lucide-react'
 import { ProductProps } from '../types'
 import { ProductVariants } from '../styles'
 
-const { productactions, productadd, productamount, productbackdrop, productcard, productcontrols, productdescript, producticon, productimage, productinfo, productinput, productname, productprice } = ProductVariants()
+const { productactions, productadd, productamount, productbackdrop, productcard, productcontrols, producticon, productimage, productinfo, productinput, productname, productprice } = ProductVariants()
 
 export const ProductComponent = ({ image, name, info, price }: ProductProps) => {
+  const currentFormat = new Intl.NumberFormat('pt-br', { currency: 'BRL', style: 'currency' })
+
   return (
     <div className={productcard()}>
       <div className={productbackdrop()}>
         <img src={'/images/backdropproduct.png'} alt={''} />
         <img className={productimage()} src={image} alt={name} />
       </div>
-      <div className={productdescript()}>
-        <p className={productname()}>{name}</p>
-        <p className={productinfo()}>{info}</p>
-        <p className={productprice()}>R$ {price}</p>
-      </div>
+      <p className={productname()}>{name}</p>
+      <p className={productinfo()}>{info}</p>
+      <p className={productprice()}>{currentFormat.format(price)}</p>
       <div className={productactions()}>
         <div className={productcontrols()}>
           <button className={productamount()}>

@@ -4,7 +4,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 import './index.css'
 import { ErrorPage } from './error'
-import { CheckoutPage, ProductLoader, ProductPage, RootPage } from './routes'
+import { CartPage, ProductLoader, ProductPage, RootPage } from './routes'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,8 +17,8 @@ const router = createBrowserRouter(
         loader={ProductLoader}
         element={<ProductPage />} />
       <Route
-        path={'/checkout'}
-        element={<CheckoutPage />} />
+        path={'/cart'}
+        element={<CartPage />} />
     </Route>
   )
 )

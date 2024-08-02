@@ -12,10 +12,10 @@ export const RootPage = () => {
         <div className={rootcontainer()}>
           <div className={rootheader()}>
             <Link to={'/'}><h1 className={roottitle()}>BLACKBUCKS COFFEE</h1></Link>
-            <div className={rootcart()}>
+            <Link className={rootcart()} to={'/cart'}>
               <ShoppingCartIcon className={rooticon()} />
               <span>4</span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

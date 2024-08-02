@@ -19,7 +19,7 @@ export const ProductPage = () => {
     <div className={productcontent()}>
       <div className={producthead()}>
         <p className={productsubtitle()}>Nossos produtos</p>
-        <h2 className={producttitle()}>Que tal uma xícara de café?</h2>
+        <h2 className={producttitle()}>"Não gostaria de entrar para tomar uma xícara de café?"</h2>
       </div>
       <div className={productitems()}>
         {products.map((product) => (<ProductComponent key={product.id} {...product} />))}

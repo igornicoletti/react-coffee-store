@@ -27,13 +27,13 @@ export const CartPage = () => {
                 </td>
                 <td>
                   <div className={'flex flex-col'}>
-                    <p className={'line-through text-sm opacity-50'}>R$ 22.90</p>
-                    <p className={'font-bold'}>R$ 22.90</p>
+                    <p className={'line-through text-sm opacity-50'}>R$ 20.99</p>
+                    <p className={'font-bold'}>R$ 20.99</p>
                   </div>
                 </td>
                 <td><QuantityComponent /></td>
-                <td><p className={'font-bold'}>R$ 22.90</p></td>
-                <td><TrashIcon className={'size-4 shrink-0 ml-auto'} /></td>
+                <td><p className={'font-bold'}>R$ 20.99</p></td>
+                <td><TrashIcon className={'size-4 shrink-0 ml-auto'} aria-hidden={true} /></td>
               </tr>
             </tbody>
           </table>

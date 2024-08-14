@@ -20,6 +20,17 @@
   }
 }
 
+@layer utilities {
+ .scrollbar::-webkit-scrollbar {
+    width: 0.625rem;
+  }
+
+ .scrollbar::-webkit-scrollbar-thumb {
+   border-radius: 1rem;
+   background-color: #282A36;
+  }
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none !important;

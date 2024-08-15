@@ -28,11 +28,11 @@ export const CartPage = () => {
                 <td>
                   <div className={'flex flex-col'}>
                     <p className={'line-through text-sm opacity-50'}>R$ 20.99</p>
-                    <p className={'font-bold'}>R$ 20.99</p>
+                    <p className={'font-semibold'}>R$ 20.99</p>
                   </div>
                 </td>
                 <td><QuantityComponent /></td>
-                <td><p className={'font-bold'}>R$ 20.99</p></td>
+                <td><p className={'font-semibold'}>R$ 20.99</p></td>
                 <td><TrashIcon className={'size-4 shrink-0 ml-auto'} aria-hidden={true} /></td>
               </tr>
             </tbody>
@@ -40,7 +40,7 @@ export const CartPage = () => {
         </div>
       </div>
       <div className={'w-full xl:max-w-sm flex flex-col gap-6'}>
-        <h2 className={'font-bold uppercase'}>Resumo do pedido</h2>
+        <h2 className={'font-semibold uppercase'}>Resumo do pedido</h2>
         <div className={'flex flex-col gap-6'}>
           <div className={'flex flex-col gap-1'}>
             <div className={'flex items-center justify-between gap-2'}>
@@ -55,12 +55,12 @@ export const CartPage = () => {
               <p>Entrega</p>
               <p>GRÁTIS</p>
             </div>
-            <div className={'flex items-center justify-between gap-2 uppercase font-bold'}>
+            <div className={'flex items-center justify-between gap-2 uppercase font-semibold'}>
               <p>Total</p>
               <p>R$ 24.90</p>
             </div>
           </div>
-          <button className={'w-full h-12 flex items-center justify-center rounded font-bold tracking-widest uppercase focus:outline-none bg-in-dark text-in-white'}>
+          <button className={'w-full h-12 flex items-center justify-center rounded font-semibold tracking-widest uppercase focus:outline-none bg-in-dark text-in-white'}>
             Finalizar compra
           </button>
           <Link className={'w-full text-center underline focus:outline-none'} to={'/'}>

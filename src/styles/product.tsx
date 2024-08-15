@@ -9,13 +9,13 @@ export const ProductVariants = tv({
     productitems: 'flex flex-wrap items-center justify-center gap-24',
     productcard: 'w-full max-w-80 flex flex-col text-center gap-4',
     productbackdrop: 'relative',
-    productimage: 'absolute -bottom-2',
-    producttext: 'flex flex-col gap-2 px-4 pt-6',
+    productimage: 'absolute -bottom-6',
+    producttext: 'flex flex-col gap-2 px-4 pt-4',
     productname: 'tracking-widest uppercase text-lg',
     productinfo: 'text-sm',
     productprice: 'line-through opacity-50',
     productsale: '',
     productactions: 'flex items-center justify-center gap-4 pt-2 mt-auto',
-    productadd: 'flex items-center justify-center px-4 py-2.5 rounded-full tracking-widest uppercase text-xs focus:outline-none bg-in-dark text-in-white dark:bg-in-white dark:text-in-dark',
+    productadd: 'flex items-center justify-center px-4 py-2.5 rounded-full tracking-widest uppercase text-xs font-semibold focus:outline-none bg-in-dark text-in-white dark:bg-in-white dark:text-in-dark',
   }
 })

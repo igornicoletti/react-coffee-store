@@ -5,7 +5,7 @@ import { MoonIcon, ShoppingCartIcon, SunIcon } from 'lucide-react'
 import { UseTheme } from '../hooks'
 import { ProductApi } from '../api'
 import { RootVariants } from '../styles'
-import { DrawerComponent } from '../components'
+import { CartComponent } from '../components'
 
 const { rootactions, rootbackdrop, rootcart, rootcontainer, rootheader, rooticon, rootlayout, rootquantity, rootonly, roottitle } = RootVariants()
 
@@ -44,7 +44,7 @@ export const RootPage = () => {
       <div className={rootcontainer()}>
         <Outlet />
       </div>
-      <DrawerComponent isOpen={isOpen} setIsOpen={setIsOpen} />
+      <CartComponent isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   )
 }

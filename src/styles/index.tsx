@@ -1,4 +1,5 @@
 export { ErrorVariants } from './error'
+export { OrderVariants } from './order'
 export { ProductVariants } from './product'
 export { QuantityVariants } from './quantity'
 export { RootVariants } from './root'

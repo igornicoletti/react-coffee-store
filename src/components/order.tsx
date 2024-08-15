@@ -1,25 +1,28 @@
 import { Trash2Icon } from 'lucide-react'
 
 import { ProductProps } from '../types'
+import { OrderVariants } from '../styles'
 import { QuantityComponent } from './quantity'
+
+const { orderaction, ordercontent, ordericon, orderimage, ordername, orderonly, orderprice, ordersale, ordertext, ordervalues } = OrderVariants()
 
 export const OrderComponent = ({ image, name, price }: ProductProps) => {
   const currentFormat = new Intl.NumberFormat('pt-br', { currency: 'BRL', style: 'currency' })
 
   return (
-    <div className="flex items-center">
-      <img className="w-20" src={image} alt={name} />
-      <div className="w-full flex flex-col">
-        <p className="tracking-widest text-sm uppercase">{name}</p>
-        <div className="flex items-center gap-4">
-          <p className="line-through text-xs opacity-50">{currentFormat.format(price)}</p>
-          <p className="text-sm">{currentFormat.format(price - (price * 10 / 100))}</p>
+    <div className={ordercontent()}>
+      <img className={orderimage()} src={image} alt={name} />
+      <div className={ordertext()}>
+        <p className={ordername()}>{name}</p>
+        <div className={ordervalues()}>
+          <p className={orderprice()}>{currentFormat.format(price)}</p>
+          <p className={ordersale()}>{currentFormat.format(price - (price * 10 / 100))}</p>
         </div>
         <QuantityComponent />
       </div>
-      <button className={'p-4 text-in-dark/50 hover:text-in-dark'}>
-        <span className="sr-only">Remover item</span>
-        <Trash2Icon className={'size-4 shrink-0'} aria-hidden={true} />
+      <button className={orderaction()}>
+        <span className={orderonly()}>Remover item</span>
+        <Trash2Icon className={ordericon()} aria-hidden={true} />
       </button>
     </div>
   )

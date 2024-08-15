@@ -1,9 +1,9 @@
-import { Trash2Icon, XIcon } from 'lucide-react'
+import { XIcon } from 'lucide-react'
 import { Link, useLoaderData } from 'react-router-dom'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
 
 import { ProductProps } from '../types'
-import { QuantityComponent } from './quantity'
+import { OrderComponent } from './order'
 
 type Props = {
   isOpen: boolean
@@ -12,7 +12,6 @@ type Props = {
 
 export const DrawerComponent = ({ isOpen, setIsOpen }: Props) => {
   const products = useLoaderData() as ProductProps[]
-  const currentFormat = new Intl.NumberFormat('pt-br', { currency: 'BRL', style: 'currency' })
 
   return (
     <Dialog open={isOpen} onClose={setIsOpen} className="relative z-10">
@@ -34,31 +33,9 @@ export const DrawerComponent = ({ isOpen, setIsOpen }: Props) => {
                   <DialogTitle className="tracking-widest uppercase font-bold">Meu Carrinho</DialogTitle>
                   <p className="text-xs opacity-50">4 itens no carrinho</p>
                 </div>
-                <ul className="flex-1 flex flex-col gap-12 p-6 pl-2 overflow-y-auto scrollbar">
-                  {products.map((product) => (
-                    <li key={product.id}>
-                      <div className="flex items-center gap-2">
-                        <img className="w-20" src={product.image} alt={product.name} />
-                        <div className="w-full flex flex-col gap-1">
-                          <p className="tracking-widest text-sm uppercase">{product.name}</p>
-                          <div className="flex items-center gap-4">
-                            <p className="line-through text-xs opacity-50">{currentFormat.format(product.price)}</p>
-                            <p className="text-sm">{currentFormat.format(product.price - (product.price * 10 / 100))}</p>
-                          </div>
-
-                          <div className="flex items-center justify-between gap-4">
-                            <QuantityComponent />
-                            {/* <p className="text-xs underline underline-offset-2 opacity-50">Remover</p> */}
-                          </div>
-                        </div>
-                        <button className={'p-2 opacity-50 hover:opacity-100 transition ease-in-out duration-250'}>
-                          <span className="sr-only">Remover item</span>
-                          <Trash2Icon className={'size-4 shrink-0'} aria-hidden={true} />
-                        </button>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex-1 flex flex-col gap-12 p-6 pl-0 overflow-y-auto scrollbar">
+                  {products.map((product) => (<OrderComponent key={product.id} {...product} />))}
+                </div>
                 <div className={'flex flex-col gap-4 md:p-6'}>
                   <div className={'flex flex-col gap-1 p-6 pb-0 md:p-0'}>
                     <div className={'flex items-center justify-between gap-2 text-sm'}>
@@ -74,7 +51,7 @@ export const DrawerComponent = ({ isOpen, setIsOpen }: Props) => {
                       <p>R$ 24.90</p>
                     </div>
                   </div>
-                  <Link className={'w-full flex items-center justify-center p-4 md:rounded font-bold text-sm tracking-widest uppercase focus:outline-none bg-in-dark text-in-white'} to={'/cart'}>
+                  <Link className={'w-full flex items-center justify-center p-6 md:p-4 md:rounded font-bold text-sm tracking-widest uppercase focus:outline-none bg-in-dark text-in-white'} to={'/cart'}>
                     Finalizar compra
                   </Link>
                 </div>

@@ -49,6 +49,7 @@ export const DrawerComponent = ({ isOpen, setIsOpen }: Props) => {
                             <p className="line-through text-xs opacity-50">{currentFormat.format(product.price)}</p>
                             <p className="font-bold text-sm">{currentFormat.format(product.price)}</p>
                           </div>
+
                           <div className="flex items-center justify-between gap-4">
                             <QuantityComponent />
                             <p className="text-xs underline underline-offset-2 opacity-50">Remover</p>

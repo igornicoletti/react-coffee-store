@@ -1,14 +1,13 @@
-import { Link, Outlet } from 'react-router-dom'
-import { ShoppingCartIcon } from 'lucide-react'
-
-import { RootVariants } from '../styles'
-import { DrawerComponent, ThemeComponent } from '../components'
 import { useState } from 'react'
-import { ProductApi } from '../api'
-import { Switch } from '@headlessui/react'
-import { UseTheme } from '../hooks'
+import { Link, Outlet } from 'react-router-dom'
+import { MoonIcon, ShoppingCartIcon, SunIcon } from 'lucide-react'
 
-const { rootbackdrop, rootcart, rootcontainer, rootheader, rooticon, rootlayout, rootonly, roottitle } = RootVariants()
+import { UseTheme } from '../hooks'
+import { ProductApi } from '../api'
+import { RootVariants } from '../styles'
+import { DrawerComponent } from '../components'
+
+const { rootactions, rootbackdrop, rootcart, rootcontainer, rootheader, rooticon, rootlayout, rootquantity, rootonly, roottitle } = RootVariants()
 
 export const ProductLoader = async () => {
   const products = await ProductApi()
@@ -25,15 +24,18 @@ export const RootPage = () => {
         <div className={rootcontainer()}>
           <div className={rootheader()}>
             <Link to={'/'}><h1 className={roottitle()}>BLACKBUCKS COFFEE</h1></Link>
-            <div className={'absolute right-0 flex items-center gap-8'}>
-              <Switch className={'relative h-4 w-9 group flex rounded-full outline outline-2 outline-black/15 bg-black/10'} checked={isEnabled} onChange={setEnable}>
-                <span className={'h-4 w-5 rounded-full transform group-aria-checked:translate-x-4 translate-x-0 transition ease-in-out duration-250 bg-in-white'} aria-hidden={true} />
-              </Switch>
-              <ThemeComponent />
+            <div className={rootactions()}>
+              <button onClick={() => setEnable(!isEnabled)}>
+                {isEnabled ? (
+                  <SunIcon className={rooticon()} aria-hidden={true} />
+                ) : (
+                  <MoonIcon className={rooticon()} aria-hidden={true} />
+                )}
+              </button>
               <button className={rootcart()} onClick={() => setIsOpen(true)}>
                 <span className={rootonly()}>Meu carrinho</span>
                 <ShoppingCartIcon className={rooticon()} aria-hidden={true} />
-                <span>4</span>
+                <span className={rootquantity()}>4</span>
               </button>
             </div>
           </div>

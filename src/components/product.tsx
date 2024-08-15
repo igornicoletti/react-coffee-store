@@ -10,7 +10,7 @@ export const ProductComponent = ({ image, name, info, price }: ProductProps) => 
   return (
     <div className={productcard()}>
       <div className={productbackdrop()}>
-        <img src={'/images/backdropproduct.png'} alt={''} />
+        <img src={'/images/backdropcart.png'} alt={''} />
         <img className={productimage()} src={image} alt={name} />
       </div>
       <div className={producttext()}>

@@ -19,7 +19,7 @@ export const DrawerComponent = ({ isOpen, setIsOpen }: Props) => {
       <div className="fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-            <DialogPanel className="pointer-events-auto w-screen max-w-md data-[closed]:translate-x-full transform transition duration-500 ease-in-out" transition>
+            <DialogPanel className="pointer-events-auto w-screen max-w-sm data-[closed]:translate-x-full transform transition duration-500 ease-in-out" transition>
               <TransitionChild>
                 <div className="absolute top-0 -left-10 flex p-2 duration-500 ease-in-out data-[closed]:opacity-0">
                   <button className="focus:outline-none text-in-white" onClick={() => setIsOpen(false)}>
@@ -28,12 +28,12 @@ export const DrawerComponent = ({ isOpen, setIsOpen }: Props) => {
                   </button>
                 </div>
               </TransitionChild>
-              <div className="h-full flex flex-col overflow-y-scroll shadow-xl bg-white">
+              <div className="h-full flex flex-col overflow-y-scroll shadow-xl bg-in-white">
                 <div className="flex flex-col p-6">
                   <DialogTitle className="tracking-widest uppercase font-bold">Meu Carrinho</DialogTitle>
                   <p className="text-xs opacity-50">4 itens no carrinho</p>
                 </div>
-                <div className="flex-1 flex flex-col gap-12 p-6 pl-0 overflow-y-auto scrollbar">
+                <div className="flex-1 flex flex-col gap-12 py-6 px-2 overflow-y-auto scrollbar">
                   {products.map((product) => (<OrderComponent key={product.id} {...product} />))}
                 </div>
                 <div className={'flex flex-col gap-4 md:p-6'}>

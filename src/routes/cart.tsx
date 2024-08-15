@@ -39,7 +39,6 @@ export const CartPage = () => {
           </table>
         </div>
       </div>
-
       <div className={'w-full xl:max-w-sm flex flex-col gap-6'}>
         <h2 className={'font-bold uppercase'}>Resumo do pedido</h2>
         <div className={'flex flex-col gap-6'}>

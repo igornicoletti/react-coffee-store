@@ -1,9 +1,6 @@
 import { XIcon } from 'lucide-react'
-import { Link, useLoaderData } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessui/react'
-
-import { ProductProps } from '../types'
-import { OrderComponent } from './order'
 
 type Props = {
   isOpened: boolean
@@ -11,7 +8,6 @@ type Props = {
 }
 
 export const CartComponent = ({ isOpened, setIsOpen }: Props) => {
-  const products = useLoaderData() as ProductProps[]
 
   return (
     <Dialog open={isOpened} onClose={setIsOpen} className='relative z-10'>
@@ -34,7 +30,7 @@ export const CartComponent = ({ isOpened, setIsOpen }: Props) => {
                   <p className='text-xs opacity-50'>4 itens no carrinho</p>
                 </div>
                 <div className='flex-1 flex flex-col gap-12 py-6 px-2 overflow-y-auto scrollbar'>
-                  {products.map((product) => (<OrderComponent key={product.id} {...product} />))}
+
                 </div>
                 <div className={'flex flex-col gap-4 md:p-6 text-sm'}>
                   <div className={'flex flex-col gap-1 p-6 pb-0 md:p-0'}>

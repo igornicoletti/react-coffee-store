@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { UseStorage } from './useStorage'
 
 export const UseTheme = () => {
-  const [isThemed, setTheme] = UseStorage('tw-theme', false)
+  const [isThemed, setTheme] = UseStorage('coffee-theme')
 
   useEffect(() => isThemed
     ? document.documentElement.classList.add('dark')

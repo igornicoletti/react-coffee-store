@@ -3,16 +3,10 @@ import { Link, Outlet } from 'react-router-dom'
 import { MoonIcon, ShoppingCartIcon, SunIcon } from 'lucide-react'
 
 import { UseTheme } from '../hooks'
-import { ProductApi } from '../api'
 import { RootVariants } from '../styles'
 import { CartComponent } from '../components'
 
 const { rootactions, rootbackdrop, rootcart, rootcontainer, rootheader, rooticon, rootlayout, rootquantity, rootonly, roottitle } = RootVariants()
-
-export const ProductLoader = async () => {
-  const products = await ProductApi()
-  return products
-}
 
 export const RootPage = () => {
   const [isEnabled, setEnable] = UseTheme()

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 
-export const UseStorage = (key: string, value: boolean) => {
+export const UseStorage = (key: string) => {
   const [isStored, setStorage] = useState(() => {
     const ls = localStorage.getItem(key)
     if (ls) return JSON.parse(ls)
-    return value
+    return []
   })
 
   useEffect(() => localStorage

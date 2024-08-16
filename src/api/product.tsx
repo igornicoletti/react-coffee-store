@@ -50,6 +50,7 @@ const products = [
 ]
 
 export const ProductApi = async () => {
+
   try {
     return await fetch('http://localhost:8000/products').then((response) => response.json())
   } catch {

@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import { MoonIcon, ShoppingCartIcon, SunIcon } from 'lucide-react'
+import { ShoppingCartIcon } from 'lucide-react'
 
-import { UseTheme } from '../hooks'
-import { RootVariants } from '../styles'
-import { CartComponent } from '../components'
+import { RootVariants } from '../styles/_index'
+import { CartComponent, ThemeComponent } from '../components/_index'
 
 const { rootactions, rootbackdrop, rootcart, rootcontainer, rootheader, rooticon, rootlayout, rootquantity, rootonly, roottitle } = RootVariants()
 
 export const RootPage = () => {
-  const [isEnabled, setEnable] = UseTheme()
   const [isOpened, setIsOpen] = useState<boolean>(false)
 
   return (
@@ -18,13 +16,7 @@ export const RootPage = () => {
         <div className={rootcontainer()}>
           <div className={rootheader()}>
             <div className={rootactions()}>
-              <button onClick={() => setEnable(!isEnabled)}>
-                {isEnabled ? (
-                  <SunIcon className={rooticon()} aria-hidden={true} />
-                ) : (
-                  <MoonIcon className={rooticon()} aria-hidden={true} />
-                )}
-              </button>
+              <ThemeComponent />
               <button className={rootcart()} onClick={() => setIsOpen(!isOpened)}>
                 <span className={rootonly()}>Meu carrinho</span>
                 <ShoppingCartIcon className={rooticon()} aria-hidden={true} />

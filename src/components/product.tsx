@@ -1,5 +1,5 @@
-import { ProductProps } from '../types'
-import { ProductVariants } from '../styles'
+import { ProductProps } from '../types/_index'
+import { ProductVariants } from '../styles/_index'
 import { QuantityComponent } from './quantity'
 
 const { productactions, productadd, productbackdrop, productcard, productimage, productinfo, productname, productprice, productsale, producttext } = ProductVariants()

@@ -4,7 +4,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 import './index.css'
 import { ErrorPage } from './error'
-import { CartPage, ProductLoader, ProductPage, RootPage } from './routes'
+import { CartPage, ProductLoader, ProductPage, RootPage } from './routes/_index'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

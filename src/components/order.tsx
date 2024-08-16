@@ -1,7 +1,7 @@
 import { Trash2Icon } from 'lucide-react'
 
-import { ProductProps } from '../types'
-import { OrderVariants } from '../styles'
+import { ProductProps } from '../types/_index'
+import { OrderVariants } from '../styles/_index'
 import { QuantityComponent } from './quantity'
 
 const { orderaction, ordercontent, ordericon, orderimage, ordername, orderonly, orderprice, ordersale, ordertext, ordervalues } = OrderVariants()

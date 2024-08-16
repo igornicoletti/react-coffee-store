@@ -1,6 +1,6 @@
 import { MinusIcon, PlusIcon } from 'lucide-react'
 
-import { QuantityVariants } from '../styles'
+import { QuantityVariants } from '../styles/_index'
 
 const { quantityamount, quantitycontrols, quantityicon, quantityinput, quantityonly } = QuantityVariants()
 

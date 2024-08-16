@@ -26,9 +26,9 @@ export const CartPage = () => {
                   </div>
                 </td>
                 <td>
-                  <div className={'flex flex-col'}>
+                  <div className={'flex gap-4'}>
                     <p className={'line-through text-sm opacity-50'}>R$ 20.99</p>
-                    <p className={'font-semibold'}>R$ 20.99</p>
+                    <p className={''}>R$ 20.99</p>
                   </div>
                 </td>
                 <td><QuantityComponent /></td>

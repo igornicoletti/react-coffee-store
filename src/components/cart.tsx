@@ -6,16 +6,16 @@ import { ProductProps } from '../types'
 import { OrderComponent } from './order'
 
 type Props = {
-  isOpen: boolean
+  isOpened: boolean
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const CartComponent = ({ isOpen, setIsOpen }: Props) => {
+export const CartComponent = ({ isOpened, setIsOpen }: Props) => {
   const products = useLoaderData() as ProductProps[]
 
   return (
-    <Dialog open={isOpen} onClose={setIsOpen} className='relative z-10'>
-      <DialogBackdrop className='fixed inset-0 bg-in-dark/25 duration-250 ease-out data-[closed]:opacity-0' transition />
+    <Dialog open={isOpened} onClose={setIsOpen} className='relative z-10'>
+      <DialogBackdrop className='fixed inset-0 bg-in-dark/50 duration-250 ease-out data-[closed]:opacity-0' transition />
       <div className='fixed inset-0 overflow-hidden'>
         <div className='absolute inset-0 overflow-hidden'>
           <div className='pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10'>
@@ -30,28 +30,28 @@ export const CartComponent = ({ isOpen, setIsOpen }: Props) => {
               </TransitionChild>
               <div className='h-full flex flex-col overflow-y-scroll shadow-xl bg-in-white'>
                 <div className='flex flex-col p-6'>
-                  <h2 className='tracking-widest uppercase font-semibold'>Meu Carrinho</h2>
+                  <h2 className='tracking-widest uppercase'>Meu Carrinho</h2>
                   <p className='text-xs opacity-50'>4 itens no carrinho</p>
                 </div>
                 <div className='flex-1 flex flex-col gap-12 py-6 px-2 overflow-y-auto scrollbar'>
                   {products.map((product) => (<OrderComponent key={product.id} {...product} />))}
                 </div>
-                <div className={'flex flex-col gap-4 md:p-6'}>
+                <div className={'flex flex-col gap-4 md:p-6 text-sm'}>
                   <div className={'flex flex-col gap-1 p-6 pb-0 md:p-0'}>
-                    <div className={'flex items-center justify-between gap-2 text-sm'}>
+                    <div className={'flex items-center justify-between gap-2'}>
                       <p>Subtotal</p>
                       <p>R$ 24.90</p>
                     </div>
-                    <div className={'flex items-center justify-between gap-2 text-sm'}>
+                    <div className={'flex items-center justify-between gap-2'}>
                       <p>Descontos</p>
                       <p>R$ 24.90</p>
                     </div>
-                    <div className={'flex items-center justify-between gap-2 text-sm font-semibold'}>
-                      <p>Total</p>
-                      <p>R$ 24.90</p>
+                    <div className={'flex items-center justify-between gap-2'}>
+                      <p><b>Total</b></p>
+                      <p><b>R$ 24.90</b></p>
                     </div>
                   </div>
-                  <Link className={'w-full flex items-center justify-center p-6 md:p-4 md:rounded font-semibold text-sm tracking-widest uppercase focus:outline-none bg-in-dark text-in-white'} to={'/cart'}>
+                  <Link className={'w-full p-6 md:p-4 md:rounded text-center tracking-widest uppercase focus:outline-none bg-in-dark text-in-white'} to={'/cart'}>
                     Finalizar compra
                   </Link>
                 </div>

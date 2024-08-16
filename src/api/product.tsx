@@ -2,10 +2,10 @@ const products = [
   {
     id: '1',
     image: '/images/cappuccino.png',
-    name: 'Cappuccino Classic',
+    name: 'Cappuccino',
     info: 'O espresso e a espuma de leite unem-se para criar o cappuccino clássico.',
     price: 20.90,
-    filter: ['traditional']
+    filter: ['hot']
   },
   {
     id: '2',
@@ -13,7 +13,7 @@ const products = [
     name: 'Latte Macchiato',
     info: 'É um café de torra média levemente torrado, mas cheio de sabor.',
     price: 20.90,
-    filter: ['express', 'hot']
+    filter: ['hot']
   },
   {
     id: '3',
@@ -21,12 +21,12 @@ const products = [
     name: 'Vanilla Latte',
     info: 'Um clássico a um novo nível de delícia com um toque de baunilha.',
     price: 20.90,
-    filter: ['express', 'hot']
+    filter: ['hot']
   },
   {
     id: '4',
-    image: '/images/sparklingmint.png',
-    name: 'Sparkling Mint',
+    image: '/images/sparklingespresso.png',
+    name: 'Sparkling Espresso',
     info: 'O café gelado ganha vida com um toque brilhante e apelativo de menta.',
     price: 20.90,
     filter: ['cold']
@@ -37,15 +37,15 @@ const products = [
     name: 'Iced Latte',
     info: 'Uma bebida fresca e refrescante que pode saborear a qualquer hora do dia.',
     price: 20.90,
-    filter: ['express', 'cold']
+    filter: ['cold']
   },
   {
     id: '6',
-    image: '/images/icedcaramel.png',
-    name: 'Iced Caramel',
+    image: '/images/caramelmacchiato.png',
+    name: 'Caramel Macchiato',
     info: 'Café rico com um toque de baunilha, adoçado com um fio de caramelo.',
     price: 20.90,
-    filter: ['express', 'cold']
+    filter: ['cold']
   }
 ]
 

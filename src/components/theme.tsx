@@ -1,20 +1,18 @@
 import { MoonIcon, SunIcon } from 'lucide-react'
 
-import { UseTheme } from '../hooks/_index'
-import { ThemeVariants } from '../styles/_index'
+import { UseTheme } from '../hooks'
+import { ThemeVariants } from '../styles'
 
 const { themeicon } = ThemeVariants()
 
 export const ThemeComponent = () => {
-  const [isEnabled, setEnable] = UseTheme()
+  const [isThemed, handleTheme] = UseTheme()
 
   return (
-    <button onClick={() => setEnable(!isEnabled)}>
-      {isEnabled ? (
-        <SunIcon className={themeicon()} aria-hidden={true} />
-      ) : (
-        <MoonIcon className={themeicon()} aria-hidden={true} />
-      )}
+    <button onClick={handleTheme}>
+      {isThemed
+        ? <SunIcon className={themeicon()} aria-hidden={true} />
+        : <MoonIcon className={themeicon()} aria-hidden={true} />}
     </button>
   )
 }

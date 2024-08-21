@@ -1,9 +1,9 @@
 import { useLoaderData } from 'react-router-dom'
 
-import { ProductApi } from '../api/_index'
-import { ProductProps } from '../types/_index'
-import { ProductVariants } from '../styles/_index'
-import { ProductComponent } from '../components/_index'
+import { ProductApi } from '../api'
+import { ProductProps } from '../types'
+import { ProductVariants } from '../styles'
+import { ProductComponent } from '../components'
 
 const { productcontent, producthead, productitems, productsubtitle, producttitle } = ProductVariants()
 

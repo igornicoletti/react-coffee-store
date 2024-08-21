@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { ShoppingCartIcon } from 'lucide-react'
 
-import { RootVariants } from '../styles/_index'
-import { CartComponent, ThemeComponent } from '../components/_index'
+import { RootVariants } from '../styles'
+import { CartComponent, ThemeComponent } from '../components'
 
 const { rootactions, rootbackdrop, rootcart, rootcontainer, rootheader, rooticon, rootlayout, rootquantity, rootonly, roottitle } = RootVariants()
 

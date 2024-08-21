@@ -1,4 +1,4 @@
-import { ErrorVariants } from './styles/_index'
+import { ErrorVariants } from './styles'
 import { useRouteError } from 'react-router-dom'
 
 const { errorcontainer, errorcontent, errorlayout, errortitle, errorstatus } = ErrorVariants({ layout: 'center' })

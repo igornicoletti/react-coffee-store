@@ -1,6 +1,5 @@
 import { useLoaderData } from 'react-router-dom'
 
-import { ProductApi } from '../api'
 import { ProductProps } from '../types'
 import { ProductVariants } from '../styles'
 import { ProductComponent } from '../components'
@@ -8,8 +7,9 @@ import { ProductComponent } from '../components'
 const { productcontent, producthead, productitems, productsubtitle, producttitle } = ProductVariants()
 
 export const ProductLoader = async () => {
-  const products = await ProductApi()
-  return products
+  const response = await fetch('https://api-coffee-store.vercel.app/products')
+  if (!response.ok) throw new Error('Failed to fetch products data')
+  return response.json() as Promise<ProductProps[]>
 }
 
 export const ProductPage = () => {

@@ -1,6 +1,7 @@
-import { TrashIcon } from 'lucide-react'
-import { QuantityComponent } from '../components'
 import { Link } from 'react-router-dom'
+import { TrashIcon } from 'lucide-react'
+
+import { QuantityComponent } from '../components'
 
 export const CartPage = () => {
   return (

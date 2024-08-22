@@ -4,21 +4,15 @@ export const UseLocalStorage = <T>(key: string, initialValue: T): [T, (value: T)
   const [isStored, setStorage] = useState<T>(() => {
     try {
       const storedValue = localStorage.getItem(key)
-      if (storedValue) return JSON.parse(storedValue) as T
+      if (storedValue) return JSON.parse(storedValue)
     } catch (error) {
       console.warn(`Error reading localStorage key '${key}':`, error)
     }
-
     return initialValue
   })
 
-  useEffect(() => {
-    try {
-      localStorage.setItem(key, JSON.stringify(isStored))
-    } catch (error) {
-      console.warn(`Error setting localStorage key '${key}':`, error)
-    }
-  }, [key, isStored])
+  useEffect(() => localStorage
+    .setItem(key, JSON.stringify(isStored)), [key, isStored])
 
   const handleStorage = (value: T) => setStorage(value)
 
